@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: :author_id
+  belongs_to :user
   has_many :comments, foreign_key: :post_id
+
+  # scope :update_post, -> {users.}
+  # scope :recent_comments, -> {comments.limit(5).order(created_at: :desc)}
 end
