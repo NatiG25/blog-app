@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
 
-  def update_post 
+  def update_post
     user.increment!(:posts_counter)
   end
 
