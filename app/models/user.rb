@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_many :posts
-  # has_many :comments, class_name: 'Comment'
-  # has_many :likes, class_name: 'Like'
+  has_many :comments
+  has_many :likes
   def recent_post
-    posts.limit(3).order(created_at: :desc)
+    posts.order(created_at: :desc).limit(3)
   end
 end
