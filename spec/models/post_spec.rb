@@ -9,6 +9,16 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
 
+  it 'user should be present' do
+    post.user = nil
+    expect(post).to_not be_valid
+  end
+
+  it 'text should be present' do
+    post.text = nil
+    expect(post).to_not be_valid
+  end
+
   it 'title must not exceed 250 characters' do
     post.title = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
      parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, 
