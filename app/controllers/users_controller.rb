@@ -5,7 +5,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show; end
+  def show 
+    @posts = @user.recent_post
+  end
 
   def set_user
     @user = User.find(params[:id])

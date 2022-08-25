@@ -5,7 +5,9 @@ class PostsController < ApplicationController
   @posts = Post.all
   end
 
-  def show; end
+  def show
+    @comments = @post.recent_comments
+ end
 
   def set_post
     @post = Post.find(params[:id])

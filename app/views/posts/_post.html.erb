@@ -9,9 +9,10 @@
     <strong>Text:</strong>
     <%= post.text %>
   </p>
-
+  <% comments.each do |comment| %>
   <p>
-  <%= render "comments/comment" %>
-` </p>
+  <%= render "comments/comment", comment: comment %>
+ </p>
+  <% end %>
 
 </div>
