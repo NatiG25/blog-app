@@ -1,18 +1,17 @@
-<div id="<%= dom_id post %>">
-
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
-
-  <p>
-    <strong>Text:</strong>
-    <%= post.text %>
-  </p>
-  <% comments.each do |comment| %>
-  <p>
-  <%= render "comments/comment", comment: comment %>
- </p>
-  <% end %>
-
-</div>
+  <tr>
+    <td>
+      <h3>Post #<%= post.title %></h3>
+      <p><%= post.text %></p>
+      <% comments.each do |comment| %>
+      <p>
+      <%= render "comments/comment", comment: comment %>
+     </p>
+      <% end %>
+    </td>
+    <td>
+      <p style="padding: 40px 0 0 30px;">
+        Comments: <%= post.comments_counter %>,
+        Likes: <%= post.likes_counter %>
+      </p>
+    </td>
+  </tr>
