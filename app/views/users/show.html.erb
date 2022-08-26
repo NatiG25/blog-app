@@ -1,1 +1,25 @@
-<h1>Here are the details of the selected user.</h1>
+<table>
+  <%= render @user %>
+
+  <tr>
+    <td>
+      <strong>Bio:</strong>
+      <%= @user.bio %>
+    </td>
+  </tr>
+
+<% @posts.each do |post| %>
+<tr>
+  <td>
+    <strong>Post #<%= post.title %></strong>
+    <p><%= post.text %></p>
+    <p style="padding: 0 0 0 13rem;">
+      Comments: <%= post.comments_counter %>,
+      Likes: <%= post.likes_counter %>
+    </p>
+  </td>
+</tr>
+<% end %>
+</table>
+
+<button>See all posts</button>

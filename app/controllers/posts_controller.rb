@@ -1,5 +1,15 @@
 class PostsController < ApplicationController
-  def index; end
+  before_action :set_post, only: %i[show]
 
-  def show; end
+  def index
+    @posts = Post.all
+  end
+
+  def show
+    @comments = @post.recent_comments
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 end
