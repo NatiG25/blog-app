@@ -1,4 +1,10 @@
-<%= form_with model: post, url: user_posts_path do |form| %>
+<%= form_with model: post.first, url: user_posts_path do |form| %>
+
+<% if post.errors.any? %>
+  <% post.errors.full_messages.each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
 
   <div>
     <%= form.label :user_id, style: "display: block" %>

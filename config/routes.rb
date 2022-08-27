@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :show, :new] do
-    resources :posts, only: [:index, :show, :new] do
+  resources :users do
+    resources :posts do
       resources :comments
     end
   end
