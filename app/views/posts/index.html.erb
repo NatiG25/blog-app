@@ -2,6 +2,7 @@
 <table>
   <% @posts.each do |post| %>
   <%= render post, comments: post.comments %>
+  
 <% end %>
 </table>
 </div>
