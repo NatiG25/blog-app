@@ -9,6 +9,10 @@ class PostsController < ApplicationController
     @comments = @post.recent_comments
   end
 
+  def new
+    @post = Post.new
+ end
+
   def set_post
     @post = Post.find(params[:id])
   end
