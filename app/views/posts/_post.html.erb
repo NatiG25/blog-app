@@ -10,8 +10,16 @@
     </td>
     <td>
       <p style="padding: 40px 0 0 30px;">
-        Comments: <%= post.comments_counter %>,
-        Likes: <%= post.likes_counter %>
+        Comments: <% if post.comments.count > 0 %>
+         <%= post.comments_counter %>,
+         <% else %>
+         0
+         <% end %>
+        Likes: <% if post.likes.count > 0 %>
+        <%= post.likes_counter %>,
+        <% else %>
+        0
+        <% end %>
       </p>
     </td>
   </tr>

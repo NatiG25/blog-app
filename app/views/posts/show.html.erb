@@ -1,3 +1,34 @@
 <table>
-    <%= render @post, comments: @comments %>
+    <tr>
+        <td>
+          <h3>Post #<%= @post.title %></h3>
+          <p><%= @post.text %></p>
+          <% @comments.each do |comment| %>
+          <p>
+          <%= render "comments/comment", comment: comment %>
+         </p>
+          <% end %>
+        </td>
+        <td>
+            <%= form_with model: Comment, url: post_comments_path(@post.user, @post), method: :post do |form| %>
+            <div>
+              <%= form.label :text, style: "display: block" %>
+              <%= form.text_field :text %>
+            </div>
+      
+            <div>
+              <%= form.submit "New Comment" %>
+            </div>
+            <% end %>
+          </td>
+      
+          <td>
+            <%= form_with model: Like, url: post_likes_path(@post.user, @post), method: :post do |form| %>
+      
+            <div>
+              <%= form.submit "Add Like" %>
+            </div>
+            <% end %>
+          </td>
+      </tr>
 </table>
