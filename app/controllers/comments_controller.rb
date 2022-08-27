@@ -7,6 +7,10 @@ class CommentsController < ApplicationController
 
   def show; end
 
+  def new
+    @comment = Comment.new
+  end
+
   def set_comment
     @comment = Comment.find(params[:id])
   end
