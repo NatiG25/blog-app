@@ -20,7 +20,6 @@
 .usersList {
   display: flex;
   flex-direction: column;
-  align-items: center;
   list-style: none;
 }
 
@@ -33,4 +32,25 @@
 .usersListContainer {
   display: flex;
   align-items: center;
+}
+
+.userLink {
+  text-decoration: none;
+}
+
+.usersBio {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.usersPost {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem;
+}
+
+.commentLikeCounters {
+  display: flex;
+  justify-content: flex-end;
 }

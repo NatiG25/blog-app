@@ -1,25 +1,20 @@
-<table>
+<ul class="usersList">
   <%= render @user %>
-
-  <tr>
-    <td>
-      <strong>Bio:</strong>
-      <%= @user.bio %>
-    </td>
-  </tr>
+<li class="usersBio">
+  <h4>Bio:</h4>
+  <%= @user.bio %>
+</li>
 
 <% @posts.each do |post| %>
-<tr>
-  <td>
-    <strong>Post #<%= post.title %></strong>
-    <p><%= post.text %></p>
-    <p style="padding: 0 0 0 13rem;">
-      Comments: <%= post.comments_counter %>,
-      Likes: <%= post.likes_counter %>
-    </p>
-  </td>
-</tr>
+<li class="usersPost">
+  <h4><%= link_to post.title, post, class: "userLink" %></h4>
+  <p><%= post.text %></p>
+  <p class="commentLikeCounters">
+    Comments: <%= post.comments_counter %>,
+    Likes: <%= post.likes_counter %>
+  </p>
+</li>
 <% end %>
-</table>
+</ul>
 
-<button>See all posts</button>
+<button type="button"><%= link_to "See all posts", user_posts_path(@posts.ids) %></button>
