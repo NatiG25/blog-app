@@ -1,9 +1,9 @@
 <div class="usersListContainer">
-<img tag src="../../assets/box.png" style="width: 50px;" />
-    <li class="usersItem">
-        <h2><%= link_to user.name , user, class: "userLink" %></h2>
-        <div class="postCounter">
-          <p>Number of posts: <%= user.posts_counter %></p>
-        </div>
-      </li>
+  <img tag src="../../assets/box.png" style="width: 50px" />
+  <li class="usersItem">
+    <h2><%= link_to user.name , user, class: "linkItem" %></h2>
+    <div class="postCounter">
+      <p>Number of posts: <%= user.posts_counter ? user.posts_counter : 0 %></p>
     </div>
+  </li>
+</div>

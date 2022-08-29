@@ -1,25 +1,12 @@
-  <tr>
-    <td>
-      <h3>Post #<%= post.title %></h3>
-      <p><%= post.text %></p>
-      <% comments.each do |comment| %>
-      <p>
-      <%= render "comments/comment", comment: comment %>
-     </p>
-      <% end %>
-    </td>
-    <td>
-      <p style="padding: 40px 0 0 30px;">
-        Comments: <% if post.comments.count > 0 %>
-         <%= post.comments_counter %>,
-         <% else %>
-         0
-         <% end %>
-        Likes: <% if post.likes.count > 0 %>
-        <%= post.likes_counter %>,
-        <% else %>
-        0
-        <% end %>
-      </p>
-    </td>
-  </tr>
+<li class="usersPost">
+  <h4>Post #<%= link_to post.title, post, class: "linkItem" %></h4>
+  <p><%= post.text %></p>
+  <% comments.each do |comment| %>
+  <p><%= render "comments/comment", comment: comment %></p>
+  <% end %>
+
+  <p class="commentLikeCounters">
+    Comments: <%= post.comments_counter ? post.comments_counter : 0 %>
+    Likes: <%= post.likes_counter ? post.likes_counter : 0 %>
+  </p>
+</li>

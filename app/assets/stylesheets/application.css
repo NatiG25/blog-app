@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 
-.usersList {
+.listContent {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -34,7 +34,7 @@
   align-items: center;
 }
 
-.userLink {
+.linkItem {
   text-decoration: none;
 }
 
