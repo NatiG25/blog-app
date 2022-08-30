@@ -6,7 +6,7 @@
   <% end %>
 
   <p class="commentLikeCounters">
-    Comments: <%= post.comments_counter %>
+    Comments: <%= post.comments_counter ? post.comments_counter : 0 %>
     Likes: <%= post.likes_counter ? post.likes_counter : 0 %>
   </p>
 </li>
