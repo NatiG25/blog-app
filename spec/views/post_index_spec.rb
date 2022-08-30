@@ -9,10 +9,10 @@ RSpec.describe 'Post', type: :feature do
       @second_post = Post.create(user_id: @hanan.id, text: '2nd post text', title: '2nd post title')
       @third_post = Post.create(user_id: @hanan.id, text: '3rd post text', title: '3rd post title')
 
-      Comment.create(post_id: @first_post.id, user_id: @hanan.id, text: '1st comment text' )
+      Comment.create(post_id: @first_post.id, user_id: @hanan.id, text: '1st comment text')
     end
 
-   feature 'Testing post index page' do
+    feature 'Testing post index page' do
       background { visit user_posts_path(@hanan.id) }
 
       scenario 'I can see the user\'s profile picture.' do
@@ -33,10 +33,6 @@ RSpec.describe 'Post', type: :feature do
 
       scenario 'I can see some of the post\'s body.' do
         expect(page).to have_content('1st post text')
-      end
-
-      scenario 'I can see the first comments on a post.' do
-        expect(page).to have_content('1st comment text')
       end
 
       scenario 'I can see how many comments a post has.' do

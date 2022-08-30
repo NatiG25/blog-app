@@ -10,7 +10,7 @@ RSpec.describe 'User', type: :feature do
       @third_post = Post.create(user_id: @hanan.id, text: '3rd post text', title: '3rd post title')
     end
 
-   feature 'Testing user show page' do
+    feature 'Testing user show page' do
       background { visit user_path(@hanan.id) }
 
       scenario 'I can see the user\'s profile picture.' do

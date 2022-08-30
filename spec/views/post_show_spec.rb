@@ -7,10 +7,10 @@ RSpec.describe 'Post', type: :feature do
 
       @first_post = Post.create(user_id: @hanan.id, text: '1st post text', title: '1st post title')
 
-      Comment.create(post_id: @first_post.id, user_id: @hanan.id, text: '1st comment text' )
+      Comment.create(post_id: @first_post.id, user_id: @hanan.id, text: '1st comment text')
     end
 
-   feature 'Testing post show page' do
+    feature 'Testing post show page' do
       background { visit post_path(@hanan.posts.first.id) }
 
       scenario 'I can see a post\'s title.' do

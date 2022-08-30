@@ -7,7 +7,7 @@ RSpec.describe 'User', type: :feature do
       @peter = User.create(name: 'Peter', photo: 'profile.jpg', bio: 'Web Developer.')
     end
 
-   feature 'Testing user index page' do
+    feature 'Testing user index page' do
       background { visit users_path }
 
       scenario 'I can see the username of all other users.' do
