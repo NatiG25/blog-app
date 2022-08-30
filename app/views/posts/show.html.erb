@@ -1,6 +1,6 @@
 <section class="postShowSection">
 <div class="postShowHeader">
-  <h3>Post #<%= @post.title %> by <%= @post.user.name %></h3>
+  <h3>Post #<%= @post.title %> by <i><%= @post.user.name %></i></h3>
   <p>
     Comments: <%= @post.comments_counter ? @post.comments_counter : 0 %>
     Likes: <%= @post.likes_counter ? @post.likes_counter : 0 %>
