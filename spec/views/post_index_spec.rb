@@ -12,7 +12,7 @@ RSpec.describe 'Post', type: :feature do
       Comment.create(post_id: @first_post.id, user_id: @hanan.id, text: '1st comment text' )
     end
 
-   feature 'Testing user show page' do
+   feature 'Testing post index page' do
       background { visit user_posts_path(@hanan.id) }
 
       scenario 'I can see the user\'s profile picture.' do
