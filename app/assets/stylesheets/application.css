@@ -17,8 +17,56 @@
   box-sizing: border-box;
 }
 
-table,
-tr {
-  border: 5px solid black;
-  border-collapse: collapse;
+.listContent {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.usersItem {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 20rem;
+}
+
+.usersListContainer {
+  display: flex;
+  align-items: center;
+}
+
+.linkItem {
+  text-decoration: none;
+}
+
+.usersBio {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.usersPost {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem;
+}
+
+.commentLikeCounters {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.postCommets {
+  border: 1px solid black;
+  padding: 2rem;
+  margin: 1rem;
+}
+
+.postShowSection {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.postShowHeader {
+  display: flex;
+  justify-content: space-between;
 }

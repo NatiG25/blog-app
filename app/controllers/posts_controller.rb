@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show]
 
   def index
-    @posts = Post.all
+    @user = User.find(params[:user_id])
+    @posts = Post.includes(:comments)
   end
 
   def show
@@ -17,16 +18,12 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     @post.user = current_user
 
-    respond_to do |format|
-      format.html do
-        if @post.save
-          flash[:success] = 'Post saved successfully'
-          redirect_to user_posts_path(current_user, @post)
-        else
-          flash.now[:error] = 'Error occured, Post not saved.'
-          render :new
-        end
-      end
+    if @post.save
+      flash[:success] = 'Post saved successfully'
+      redirect_to user_posts_path(current_user, @post)
+    else
+      flash.now[:error] = 'Error occured, Post not saved.'
+      render :new
     end
   end
 

@@ -1,7 +1,9 @@
 <div id="posts">
-<table>
+<ul class="listContent">
+  <%= render "users/user", user: @user %>
   <% @posts.each do |post| %>
   <%= render post, comments: post.comments %>
 <% end %>
-</table>
+</ul>
+<button>Paddington</button>
 </div>
