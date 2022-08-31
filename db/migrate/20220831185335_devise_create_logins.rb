@@ -38,7 +38,7 @@ class DeviseCreateLogins < ActiveRecord::Migration[7.0]
 
     add_index :logins, :email,                unique: true
     add_index :logins, :reset_password_token, unique: true
-    # add_index :logins, :confirmation_token,   unique: true
+    add_index :logins, :confirmation_token,   unique: true
     # add_index :logins, :unlock_token,         unique: true
   end
 end
