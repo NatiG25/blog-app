@@ -7,7 +7,7 @@
 
 <% @posts.each do |post| %>
 <li class="usersPost">
-  <h4><%= link_to post.title, post, class: "linkItem" %></h4>
+  <h4><%= link_to post.title, user_post_path(post.id), class: "linkItem" %></h4>
   <p><%= post.text %></p>
   <p class="commentLikeCounters">
     Comments: <%= post.comments_counter %>,

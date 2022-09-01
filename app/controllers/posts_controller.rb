@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show]
+  before_action :set_post, only: %i[show destroy]
 
   def index
     @user = User.find(params[:user_id])
@@ -25,6 +25,12 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Error occured, Post not saved.'
       render :new
     end
+  end
+
+  def destroy
+    @post.destroy
+
+    redirect_to users_path
   end
 
   def set_post

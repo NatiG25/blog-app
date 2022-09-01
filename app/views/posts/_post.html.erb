@@ -1,5 +1,5 @@
 <li class="usersPost">
-  <h4>Post #<%= link_to post.title, post, class: "linkItem" %></h4>
+  <h4>Post #<%= link_to post.title, user_post_path(post.user_id, post.id), class: "linkItem" %></h4>
   <p><%= post.text %></p>
   <% comments.each do |comment| %>
   <p><%= render "comments/comment", comment: comment %></p>
