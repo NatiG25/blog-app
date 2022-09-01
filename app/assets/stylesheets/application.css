@@ -79,3 +79,8 @@
 .loginHeader {
   margin-left: 5%;
 }
+
+.loginUser {
+  display: flex;
+  justify-content: center;
+}
