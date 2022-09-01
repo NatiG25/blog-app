@@ -30,6 +30,6 @@
     </div>
     <% end %>
 
-    <%= button_to "Destroy this post", user_posts_path, method: :destroy %>
+    <%= button_to "Destroy this post", { action: :destroy, id: @post.id }, method: :delete %>
 
 </section>
