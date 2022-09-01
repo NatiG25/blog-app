@@ -70,3 +70,12 @@
   display: flex;
   justify-content: space-between;
 }
+
+.loginPage {
+  display: flex;
+  justify-content: center;
+}
+
+.loginHeader {
+  margin-left: 5%;
+}
