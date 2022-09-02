@@ -78,3 +78,5 @@ gem 'hirb'
 gem 'rails-controller-testing'
 
 gem 'devise'
+
+gem 'cancancan'
