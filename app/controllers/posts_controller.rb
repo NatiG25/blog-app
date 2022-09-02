@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
+  before_action :authenticate_user!, only: %i[create new destroy]
   before_action :set_post, only: %i[show destroy]
 
   def index
@@ -12,18 +13,19 @@ class PostsController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
     @post = Post.new
   end
 
   def create
     @post = Post.create(post_params)
-    @post.user_id = current_login.id
+    @post.user_id = current_user.id
 
     if @post.save
-      :notice => 'Post saved successfully'
-      redirect_to user_posts_path(current_login, @post)
+      flash[:notice] = 'Post saved successfully'
+      redirect_to user_posts_path(current_user, @post)
     else
-      :notice => 'Error occured, Post not saved.'
+      flash[:notice] = 'Error occured, Post not saved.'
       render :new
     end
   end

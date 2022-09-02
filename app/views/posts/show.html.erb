@@ -29,7 +29,7 @@
       <%= form.submit "Add Like" %>
     </div>
     <% end %>
-
-    <% if can? :delete, { action: :destroy, id: @post.id } %><%= button_to "Destroy this post", { action: :destroy, id: @post.id }, method: :delete %>
-<% end %>
+    <% if can? :manage, @post %>
+      <%= button_to "Destroy this post", { action: :destroy, id: @post.id }, method: :delete %>
+    <% end %>
 </section>

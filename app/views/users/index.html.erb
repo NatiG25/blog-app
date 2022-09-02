@@ -1,8 +1,8 @@
 <div id="users">
-  <% if login_signed_in? %>
-  <%= link_to "log Out", destroy_login_session_path, method: :delete %>
+  <% if user_signed_in? %>
+  <%= button_to "log Out", destroy_user_session_path, method: :delete %>
   <% else %>
-  <%= link_to "log In", new_login_session_path %>
+  <%= link_to "log In", new_user_session_path %>
   <% end %>
   <ul class="listContent">
     <% @users.each do |user| %> <%= render user %> <% end %>
