@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_post, only: %i[show destroy]
 
   def index
-    @user = User.find(params[:user_id])
-    @posts = Post.includes(:comments)
+    # @user = User.find(params[:user_id])
+    # @posts = Post.includes(:comments)
   end
 
   def show
@@ -19,10 +20,10 @@ class PostsController < ApplicationController
     @post.user_id = current_login.id
 
     if @post.save
-      flash[:success] = 'Post saved successfully'
+      :notice => 'Post saved successfully'
       redirect_to user_posts_path(current_login, @post)
     else
-      flash.now[:error] = 'Error occured, Post not saved.'
+      :notice => 'Error occured, Post not saved.'
       render :new
     end
   end
