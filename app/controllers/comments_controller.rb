@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_user, only: %i[show]
+  before_action :set_user, only: %i[show destroy]
 
   def index
     @comments = Comment.all
@@ -26,6 +26,12 @@ class CommentsController < ApplicationController
     else
       flash.now[:error] = 'Error: Comment could not be created'
     end
+  end
+
+  def destroy
+    @comment.destroy
+
+    redirect_to user_posts_path, notice: 'Your comment has been deleted'
   end
 
   private
