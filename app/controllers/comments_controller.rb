@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_user, only: %i[show destroy]
+  before_action :set_comment, only: %i[show destroy]
 
   def index
     @comments = Comment.all
