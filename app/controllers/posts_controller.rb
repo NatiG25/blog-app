@@ -31,7 +31,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
 
-    redirect_to user_posts_path, :notice => "Your post has been deleted"
+    redirect_to user_posts_path, notice: 'Your post has been deleted'
   end
 
   def set_post
