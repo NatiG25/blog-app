@@ -3,8 +3,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show destroy]
 
   def index
-    # @user = User.find(params[:user_id])
-    # @posts = Post.includes(:comments)
+    @user = User.find(params[:user_id])
+    @posts = Post.includes(:comments)
   end
 
   def show

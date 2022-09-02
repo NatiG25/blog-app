@@ -30,6 +30,6 @@
     </div>
     <% end %>
 
-    <%= button_to "Destroy this post", { action: :destroy, id: @post.id }, method: :delete %>
-
+    <% if can? :delete, { action: :destroy, id: @post.id } %><%= button_to "Destroy this post", { action: :destroy, id: @post.id }, method: :delete %>
+<% end %>
 </section>
