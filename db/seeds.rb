@@ -1,4 +1,4 @@
-tom = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+tom = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', email:"tom@dev.co", password: 123456)
 
 hello = Post.create(user_id: tom.id, title: 'Hello', text: 'This is my first post.')
 hi = Post.create(user_id: tom.id, title: 'Hi', text: 'This is my second post.')

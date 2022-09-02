@@ -2,3 +2,5 @@
    <strong><%= comment.user.name %>:</strong>
     <%= comment.text %>
     </p>
+    <% if can? :delete, { action: :destroy, id: comment.id } %><%= button_to "Remove this comment", { action: :destroy, id: comment.id }, method: :delete %>
+    <% end %>
