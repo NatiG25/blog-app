@@ -1,8 +1,4 @@
 class ApplicationController < ActionController::Base
-  # def current_user
-  #   @current_user ||= session[:current_user_id] && User.find_by_id(session[:current_user_id])
-  # end
-  # helper_method :current_user
   before_action :update_allowed_parameters, if: :devise_controller?
   protect_from_forgery with: :null_session,
                        if: proc { |c| c.request.format =~ %r{application/json} }
