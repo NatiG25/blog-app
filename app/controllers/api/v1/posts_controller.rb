@@ -1,8 +1,9 @@
 class API::V1::PostsController < ApplicationController
-before_action :set_post
+before_action :set_post, only: %i[show]
 
-def show
+def index
     @user = User.find(params[:user_id])
+    @posts = Post.all
 end
 
 def set_post
