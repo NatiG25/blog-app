@@ -6,9 +6,12 @@ def index
     @posts = Post.all
 end
 
+def show
+    @comments = @post.comments
+end
+
 def set_post
     @post = Post.find(params[:id])
 end
 
-private :set_post
 end
