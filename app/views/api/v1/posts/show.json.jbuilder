@@ -1,3 +1,3 @@
 json.current do
-    json.comments @comments
+  json.comments @comments
 end

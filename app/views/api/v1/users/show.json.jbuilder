@@ -1,3 +1,3 @@
 json.current do
-    json.post @user.posts
+  json.post @user.posts
 end

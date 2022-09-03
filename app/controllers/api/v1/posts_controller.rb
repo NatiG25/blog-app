@@ -1,17 +1,16 @@
 class API::V1::PostsController < ApplicationController
-before_action :set_post, only: %i[show]
+  before_action :set_post, only: %i[show]
 
-def index
+  def index
     @user = User.find(params[:user_id])
     @posts = Post.all
-end
+  end
 
-def show
+  def show
     @comments = @post.comments
-end
+  end
 
-def set_post
+  def set_post
     @post = Post.find(params[:id])
-end
-
+  end
 end
